@@ -1,14 +1,15 @@
 ---
 layout: default
-title:jerry xiong 的不老阁
+title: jerry xiong的不老阁
 ---
-<!doctype html>
-<html>
-<head>
-<title>Hello,World</title>
-</head>
-
-<body>
-<h1>Hello!</h1>
-</body>
-</html>
+<h2>{{ page.title }}</h2>
+<p>最新文章</p>
+<ul>
+	{ % for post in site.posts %}
+	<li>{{ post.date |date_to_string }} <a
+	href="{{ site.baseurl }} {{ post.url }}">{{
+	post.title 
+	}}</a></li>
+	
+	{ % endfor %}
+</ul>
